@@ -70,8 +70,8 @@ dependencies {
     implementation 'com.jakewharton.rxbinding3:rxbinding:3.1.0'
 
     // Moshi
-    implementation 'com.squareup.moshi:moshi:1.13.0'
-    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.13.0'
+    implementation 'com.squareup.moshi:moshi:1.12.0'
+    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.12.0'
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
