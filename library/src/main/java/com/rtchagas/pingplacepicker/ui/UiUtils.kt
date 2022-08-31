@@ -37,6 +37,8 @@ object UiUtils {
      * Returns whether the current selected theme is night mode or not
      */
     fun isNightModeEnabled(context: Context): Boolean {
+        // TODO: remove when fixing the night mode issues
+        return false
 
         val nightMode = (context.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK)
 
