@@ -138,21 +138,33 @@
                 app:layout_collapseParallaxMultiplier="0.7"
                 app:rippleColor="@android:color/transparent">
 
-                <ImageView
-                    style="@style/PingIcon.OnSurface"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="@dimen/card_search_content_start_margin"
-                    android:contentDescription="@android:string/search_go"
-                    app:srcCompat="@drawable/ic_magnify_black_24dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="@dimen/card_search_content_margin"
-                    android:text="@android:string/search_go"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                    android:textColor="@color/material_on_surface_emphasis_medium" />
+                    <ImageView
+                        style="@style/PingIcon.OnSurface"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/card_search_content_start_margin"
+                        android:contentDescription="@android:string/search_go"
+                        app:srcCompat="@drawable/ic_magnify_black_24dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/card_search_content_start_margin"
+                        android:layout_marginEnd="@dimen/card_search_content_start_margin"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="@android:string/search_go"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                        android:textColor="@color/material_on_surface_emphasis_medium" />
+                </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
