@@ -5,6 +5,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.libraries.places.api.model.*
 import kotlinx.android.parcel.Parcelize
+import com.google.android.libraries.places.api.model.Place.BooleanPlaceAttributeValue.UNKNOWN
 
 @Parcelize
 class CustomPlace(
@@ -36,12 +37,68 @@ class CustomPlace(
         return null
     }
 
+    override fun getCurbsidePickup(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getDelivery(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getDineIn(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getReservable(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getServesBeer(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getServesBreakfast(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getServesBrunch(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getServesDinner(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getServesLunch(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getServesVegetarianFood(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getServesWine(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getTakeout(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
+    override fun getWheelchairAccessibleEntrance(): BooleanPlaceAttributeValue {
+        return UNKNOWN
+    }
+
     override fun getId(): String? {
         return placeId
     }
 
     override fun getPhotoMetadatas(): MutableList<PhotoMetadata> {
         return placePhotos
+    }
+
+    override fun getSecondaryOpeningHours(): MutableList<OpeningHours>? {
+        return null
     }
 
     override fun getWebsiteUri(): Uri? {
@@ -68,12 +125,24 @@ class CustomPlace(
         return null
     }
 
+    override fun getCurrentOpeningHours(): OpeningHours? {
+        return null
+    }
+
     override fun getAttributions(): MutableList<String> {
         return mutableListOf()
     }
 
     override fun getAddress(): String? {
         return placeAddress
+    }
+
+    override fun getEditorialSummary(): String? {
+        return null
+    }
+
+    override fun getEditorialSummaryLanguageCode(): String? {
+        return null
     }
 
     override fun getIconUrl(): String? {
