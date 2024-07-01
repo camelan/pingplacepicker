@@ -3,11 +3,11 @@ package com.rtchagas.pingsample
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.libraries.places.api.model.Place
 import com.rtchagas.pingplacepicker.PingPlacePicker
-import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.toast
+import kotlinx.android.synthetic.main.activity_main.btnOpenPlacePicker
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val builder = PingPlacePicker.IntentBuilder()
 
         builder.setAndroidApiKey(getString(R.string.key_google_apis_android))
-                .setMapsApiKey(getString(R.string.key_google_apis_maps))
+            .setMapsApiKey(getString(R.string.key_google_apis_maps))
 
         // If you want to set a initial location
         // rather then the current device location.
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             val placeIntent = builder.build(this)
             startActivityForResult(placeIntent, pingActivityRequestCode)
         } catch (ex: Exception) {
-            toast("Google Play Services is not Available")
+            Toast.makeText(this, "Google Play Services is not Available", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -48,7 +48,8 @@ class MainActivity : AppCompatActivity() {
 
             val place: Place? = PingPlacePicker.getPlace(data!!)
 
-            toast("You selected: ${place?.name}\n ${place?.id}")
+            Toast.makeText(this, "You selected: ${place?.name}\n ${place?.id}", Toast.LENGTH_LONG)
+                .show()
         }
     }
 }

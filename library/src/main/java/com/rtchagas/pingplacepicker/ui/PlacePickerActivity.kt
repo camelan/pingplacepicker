@@ -12,6 +12,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.res.ResourcesCompat
@@ -45,7 +46,6 @@ import com.rtchagas.pingplacepicker.viewmodel.PlacePickerViewModel
 import com.rtchagas.pingplacepicker.viewmodel.Resource
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_place_picker.*
-import org.jetbrains.anko.toast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.math.abs
 
@@ -386,7 +386,7 @@ class PlacePickerActivity : AppCompatActivity(),
                 pbLoading.hide()
             }
             Resource.Status.ERROR -> {
-                toast(R.string.picker_load_this_place_error)
+                Toast.makeText(this, R.string.picker_load_this_place_error, Toast.LENGTH_SHORT).show()
                 pbLoading.hide()
             }
             Resource.Status.NO_DATA -> {
@@ -407,7 +407,7 @@ class PlacePickerActivity : AppCompatActivity(),
                 pbLoading.hide()
             }
             Resource.Status.ERROR -> {
-                toast(R.string.picker_load_places_error)
+                Toast.makeText(this, R.string.picker_load_places_error, Toast.LENGTH_SHORT).show()
                 pbLoading.hide()
             }
             Resource.Status.NO_DATA -> {
@@ -572,7 +572,6 @@ class PlacePickerActivity : AppCompatActivity(),
      * Customise the styling of the base map using a JSON object defined in a raw resource file.
      */
     private fun setMapStyle() {
-
         if (!UiUtils.isNightModeEnabled(this)) {
             return
         }
@@ -600,7 +599,6 @@ class PlacePickerActivity : AppCompatActivity(),
 
     @SuppressLint("MissingPermission")
     private fun updateLocationUI() {
-
         googleMap?.let {
 
             with(it.uiSettings) {
