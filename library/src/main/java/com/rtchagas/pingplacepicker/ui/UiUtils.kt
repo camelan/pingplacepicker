@@ -6,7 +6,6 @@ import android.util.TypedValue
 import androidx.annotation.ColorInt
 import com.google.android.libraries.places.api.model.Place
 import com.rtchagas.pingplacepicker.R
-import org.jetbrains.anko.configuration
 import java.util.*
 
 
@@ -40,7 +39,7 @@ object UiUtils {
         // TODO: remove when fixing the night mode issues
         return false
 
-        val nightMode = (context.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK)
+        val nightMode = (context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK)
 
         return nightMode == Configuration.UI_MODE_NIGHT_YES
     }
